@@ -1,0 +1,22 @@
+ //Theme
+import { lightTheme, darkTheme } from '../Theme';
+import { ThemeProvider} from '@mui/material/styles';
+import { Button } from '@mui/material';
+ 
+ const [theme, setTheme] = useState(lightTheme);
+
+  const toggleTheme = () => {
+    if (theme === lightTheme) {
+      setTheme(darkTheme);
+    } else {
+      setTheme(lightTheme);
+    }
+  };
+
+  <ThemeProvider theme={theme}>
+      <div style={{ backgroundColor: theme.palette.background.default }}>
+        <Button onClick={toggleTheme}>
+          {theme === lightTheme ? 'Dark Mode' : 'Light Mode'}
+        </Button>
+      </div>
+      </ThemeProvider>
